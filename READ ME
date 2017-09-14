@@ -8,17 +8,17 @@ Each of these functions takes in a number of runs (how many times to run the sim
 
 The specific parameters differ for each model, but examples of how to set the parameters can be set are in the scripts in the folder "run simulations".
 
-Plots of the median value function and policy can be made by uncommenting the final lines of these functions (which contain calls to functions such as "display policy").
+Plots of the median value function and policy can be made by uncommenting the final lines of these functions (which contain calls to functions such as "display policy").  The lines which save the game structure must also be uncommented (these must be commented however for code to run in parallel).
 
 The models in the code correspond to models in the paper as follows:
 
 vsr = SR-TD
 vsr2 = SR-MB
-vpunc = TD + one-step lookahead
+vpunc = one-step lookahead
 qsr = SR-Dyna
 dynaQ = Dyna-Q
 vsr_r = SR-TD with direct learning of the reward function for weights
 
-Additionally, "qr_maze.m" contains code for the simulation in supplementary figure 1 and 
+Additionally, "qr_maze.m" contains code for the simulation in supplementary figure 1 and "rvw_maze.m" is simulation for supplementary figure 2.
 
 
