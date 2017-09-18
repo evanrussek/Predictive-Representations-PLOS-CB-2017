@@ -12,7 +12,7 @@ Plots of the median value function and policy can be made by uncommenting the fi
 
 The models in the code correspond to models in the paper as follows:
 
-vsr = SR-TD
+vsrT = SR-TD
 vsr2 = SR-MB
 vpunc = one-step lookahead
 qsr = SR-Dyna

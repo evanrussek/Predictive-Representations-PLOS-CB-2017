@@ -6,7 +6,7 @@ postr_hor = zeros(10,10,nruns); postr_vert = zeros(10,10,nruns);
 postr2_hor = zeros(10,10,nruns); postr2_vert= zeros(10,10,nruns);
 postr_Q = zeros(403,nruns);  postr2_Q = zeros(403,nruns);
 
-parfor t = 1:nruns
+for t = 1:nruns
 tic
 t
 
@@ -57,10 +57,8 @@ model = model.dyna_update(model,game,nsamples);
 model.Q = model.H*model.w
 %[implied_policy, state_val] =  get_pol_from_q(game,model);
 postr_Q(:,t) = model.Q;
-%game_postr = game;
+game_postr = game;
 %[r2.postr_hor(:,:,t) r2.postr_vert(:,:,t)] = makepolarrows(implied_policy,game);
-
-
 
 
 % run new training (nonrandom) % make sure these actually 
@@ -120,7 +118,7 @@ model = model.dyna_update(model,game,nsamples);
 model.Q = model.H*model.w
 %[implied_policy, state_val] =  get_pol_from_q(game,model);
 postr2_Q(:,t) = model.Q;
-%game_postr2 = game;
+game_postr2 = game;
 %[r2.postr2_hor(:,:,t) r2.postr2_vert(:,:,t)] = makepolarrows(implied_policy,game);
 toc
 end
@@ -128,7 +126,7 @@ end
 r2.postr_Q = postr_Q;
 r2.postr2_Q = postr2_Q;
 
-%figure(1)
-%postr_Q = median(r2.postr_Q,2);  displaypolicyQ(game_postr,postr_Q);
-%figure(2)
-%postd_Q = median(r2.postr2_Q,2); displaypolicyQ(game_postr2,postd_Q);
+figure(1)
+postr_Q = median(r2.postr_Q,2);  displaypolicyQ(game_postr,postr_Q);
+figure(2)
+postd_Q = median(r2.postr2_Q,2); displaypolicyQ(game_postr2,postd_Q);
