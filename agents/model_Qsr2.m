@@ -18,8 +18,8 @@ function model = modelinit(model,game,params_in)
 	if nargin < 3
 
 		model.param.epsilon = .1;
-		model.param.sr_alpha = .4;
-		model.param.w_alpha = .1;
+		model.param.sr_alpha = .3;
+		model.param.w_alpha = .3;
 		model.param.discount = .9;
 		model.param.nsamples = 10000;
 		model.param.bsamples = 10;
@@ -126,17 +126,24 @@ function [H] = qlearn_update(s,a,r,s_prime,a_prime,model,game)
 
 function model = dyna_update(model,game,nsamples)
 
+	%keyboard
+
 	u_sa = unique(model.sa_list(1:model.dn_tot-1)); % should have no zeros
 
 	for k = 1:nsamples
 		ind = ceil(rand*length(u_sa)); % pick an index from unique elements in sa_list
 		sa_num = u_sa(ind);
+
 		% choose a sample from the list for this sa
-		%pdf = exponential(model.sa(sa_num).dn-1:-1:1,model.sa(sa_num).dn/5);
-		%pdf = pdf/sum(pdf);
-		%n = find(rand < cumsum(pdf),1);
+		%pdf = exponential(model.sa(sa_num).dn-1:-1:1,5);
+		pdf = exponential(1:100, 1/5);
+		pdf = pdf/sum(pdf);
+		n = find(rand < cumsum(pdf),1);
+		if n > model.sa(sa_num).dn - 1
+			n = model.sa(sa_num).dn - 1;
+		end
 		%sample = model.sa(sa_num).samples(n,:);
-		sample = model.sa(sa_num).samples(model.sa(sa_num).dn-1,:);
+		sample = model.sa(sa_num).samples(model.sa(sa_num).dn-n,:);
 
 		s = sample(1); a = sample(2); r = sample(3); s_prime = sample(4); a_prime = sample(5);
 		[H] = qlearn_update(s,a,r,s_prime,a_prime,model,game);
@@ -154,7 +161,7 @@ function w = w_update(s,a,r,s_prime,a_prime,model,game)
 	sa_prime = game.available_sa(s_prime,a_prime);
 
 	feature_rep_s = model.H(sa,:);
-	norm_feature_rep_s = feature_rep_s./norm(feature_rep_s);
+	norm_feature_rep_s = feature_rep_s./(feature_rep_s*feature_rep_s');
 
 	w_error = r + model.param.discount*(model.H(sa_prime,:)*model.w) - (model.H(sa,:)*model.w);
 

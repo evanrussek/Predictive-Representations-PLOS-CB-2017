@@ -1,10 +1,6 @@
 function test_params_qsr_high(num_in)
 
-
- nums_to_go =[ 50    53    56    71    59    74    63    54    69    42    57    75];
-
-
-con_input = nums_to_go(num_in);
+con_input = num_in;
 
 eps_vec = [.1, .3, .5];
 sr_vec = [.1, .3, .5, .7, .9];
@@ -14,12 +10,13 @@ w_vec = [.1, .3, .5, .7, .9];
 [eps_ind, sr_ind, w_ind] = ind2sub([3,5,5],con_input);
 
 
-param.epsilon = eps_vec(eps_ind);
-param.sr_alpha = sr_vec(sr_ind);
-param.w_alpha = w_vec(w_ind);
+param.epsilon = .1; %eps_vec(eps_ind);
+param.sr_alpha = .3; %sr_vec(sr_ind);
+param.w_alpha = .3 %w_vec(w_ind);
 param.discount = 0.95;
+param.b_samples = 10;
 
-nruns = 250;
+nruns = 1;
 
 %r2 = qsrmaze(nruns, 10000, param);
 

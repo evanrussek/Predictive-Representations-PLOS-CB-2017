@@ -88,17 +88,18 @@ function model = dyna_update(model,game,nsamples)
 	for k = 1:nsamples
 		ind = ceil(rand*length(u_sa)); % pick an index from unique elements in sa_list
 		sa_num = u_sa(ind);
-		%if sa_num == 401
-		%	keyboard
-		%end
-		% choose a sample from the list for this sa
-		%pdf = exponential(model.sa(sa_num).dn-1:-1:1,model.sa(sa_num).dn/20);
-		%pdf = pdf/sum(pdf);
-		%plot(pdf)
-		%n = find(rand < cumsum(pdf),1);
 
+				% choose a sample from the list for this sa
+		%pdf = exponential(model.sa(sa_num).dn-1:-1:1,5);
+		pdf = exponential(1:100, 1/5);
+		pdf = pdf/sum(pdf);
+		n = find(rand < cumsum(pdf),1);
+		if n > model.sa(sa_num).dn - 1
+			n = model.sa(sa_num).dn - 1;
+		end
 		%sample = model.sa(sa_num).samples(n,:);
-		sample = model.sa(sa_num).samples(model.sa(sa_num).dn-1,:);
+		sample = model.sa(sa_num).samples(model.sa(sa_num).dn-n,:);
+		
 
 		s = sample(1); a = sample(2); r = sample(3); s_prime = sample(4); a_prime = sample(5);
 		old401 = model.Q(401);

@@ -102,11 +102,11 @@ model = model.dyna_update(model,game,nsamples);
 model.Q = model.H*model.w;
 %[implied_policy, state_val] =  get_pol_from_q(game,model);
 r2.postd_Q(:,t) = model.Q;
-%game_postd = game;
+game_postd = game;
 %[r2.postd_hor(:,:,t) r2.postd_vert(:,:,t)] = makepolarrows(implied_policy,game);
 end
 
-%figure(1)
-%postr_val = median(r2.postr_Q,2);  displaypolicyQ(game_postr,postr_val);
-%figure(2)
-%postd_val = median(r2.postd_Q,2); displaypolicyQ(game_postd,postd_val);
+figure(1)
+postr_val = median(r2.postr_Q,2);  displaypolicyQ(game_postr,postr_val);
+figure(2)
+postd_val = median(r2.postd_Q,2); displaypolicyQ(game_postd,postd_val);
