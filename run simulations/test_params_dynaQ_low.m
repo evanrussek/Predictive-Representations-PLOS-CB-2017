@@ -12,6 +12,8 @@ alpha_vec = [.1, .3, .5, .7, .9];
 param.epsilon = eps_vec(eps_ind);
 param.alpha = alpha_vec(w_ind);
 param.discount = 0.95;
+param.b_samples = 10;
+
 
 
 nruns = 500;

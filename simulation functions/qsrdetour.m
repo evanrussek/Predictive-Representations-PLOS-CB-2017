@@ -45,6 +45,7 @@ game.Rsa(401) = 10;
 %	[game, model] = gamestep2(game,model,0);
 %end
 
+% do n trials from start to finish
 ntrials = 5;
 ind = 1;
 for tr = 1:ntrials

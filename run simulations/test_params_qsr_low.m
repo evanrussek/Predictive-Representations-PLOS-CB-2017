@@ -1,4 +1,4 @@
-function test_params_qsr_high(con_input)
+function test_params_qsr_low(con_input)
 
 eps_vec = [.1, .3, .5];
 sr_vec = [.1, .3, .5, .7, .9];
@@ -10,23 +10,24 @@ w_vec = [.1, .3, .5, .7, .9];
 param.epsilon = eps_vec(eps_ind);
 param.sr_alpha = sr_vec(sr_ind);
 param.w_alpha = w_vec(w_ind);
-param.discount = 0.9;
+param.discount = 0.95;
+param.b_samples = 10;
 
-nruns = 500;
+nruns = 1;
 
 r2 = qsrmaze(nruns, 10, param);
 
 r2.param = param;
 
-file_name = ['results/qsrm_low',num2str(con_input)];
+%file_name = ['results/qsrm_low',num2str(con_input)];
 
-save(file_name, 'r2')
+%save(file_name, 'r2')
 
 r3 = qsrdetour(nruns, 10, param);
 
-file_name = ['results/qsrd_low',num2str(con_input)];
+%file_name = ['results/qsrd_low',num2str(con_input)];
 
-save(file_name, 'r3')
+%save(file_name, 'r3')
 
 
 
