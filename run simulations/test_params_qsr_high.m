@@ -19,7 +19,7 @@ param.b_samples = 10;
 nruns = 1;
 
 % run latent learning nad policy revaluation
-r2 = qsrmaze(nruns, 12000, param);
+r2 = qsrmaze(nruns, 10000, param);
 
 %r2.param = param;
 
@@ -28,7 +28,7 @@ r2 = qsrmaze(nruns, 12000, param);
 %save(file_name, 'r2')
 
 % run detour task
-%r3 = qsrdetour(nruns, 12000, param);
+%r3 = qsrdetour(nruns, 10000, param);
 
 %file_name = ['results/qsrd_high',num2str(con_input)];
 

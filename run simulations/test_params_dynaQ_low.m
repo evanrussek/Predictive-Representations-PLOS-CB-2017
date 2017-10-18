@@ -16,7 +16,7 @@ param.b_samples = 10;
 
 
 
-nruns = 500;
+nruns = 1;
 nsamples = 10;
 
 r2 = dynaQmaze(nruns, nsamples, param);

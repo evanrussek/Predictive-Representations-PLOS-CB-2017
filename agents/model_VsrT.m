@@ -41,6 +41,7 @@ function model = modelupdate(model,game)
 	[model.M, model.m_error] = m_update(model.s,model.s_prime,model,game);
 	% update w 
 	[model.w, model.w_error, model.w_change] = w_update(model.s,model.r,model.s_prime,model,oldM);
+	
 
 function a = modelchoose(Qvals,game,epsilon)
 	%epsilon = .1;
