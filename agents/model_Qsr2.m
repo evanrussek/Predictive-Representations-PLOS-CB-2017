@@ -20,7 +20,7 @@ function model = modelinit(model,game,params_in)
 		model.param.epsilon = .1;
 		model.param.sr_alpha = .3;
 		model.param.w_alpha = .3;
-		model.param.discount = .9;
+		model.param.discount = .95;
 		model.param.nsamples = 10000;
 		model.param.bsamples = 10;
 	else
@@ -77,22 +77,6 @@ function a = modelchoose(Qvals,game, epsilon)
     action_prob(bestA) = (1 - epsilon)/length(bestA);
 	action_prob = action_prob + epsilon/length(Qvals);
     a = find(rand < cumsum(action_prob),1);
-
- %    epsilon = .1;
-	% % which of these actions are actually availalbe
-	% next_state = game.nextState(game.current_state,:);
-	% next_state(next_state == 0) = [];
-
-	% available_choices = find(~(next_state == game.current_state));
-	% action_prob = zeros(length(Qvals),1);
-	% [maxval, max_aa] = max(Qvals(available_choices));
-	% all_best_aa = find(Qvals(available_choices)==maxval);
-	% all_best_c = available_choices(all_best_aa);
- %    action_prob(all_best_c) = (1 - epsilon)/length(all_best_c);
-	% action_prob(available_choices) = action_prob(available_choices) + epsilon/length(available_choices);
- %    a = find(rand < cumsum(action_prob),1);
-
-
 
 
 function H = sarsa_update(s,a,s_prime,a_prime,model,game)
