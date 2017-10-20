@@ -52,7 +52,6 @@ function model = modelupdate(model,game)
 	model.H = sarsa_update(model.s,model.a,model.s_prime,model.a_prime,model,game);
 
 	% update w 
-	%model.w = w_update(model,game);
 	model.w = w_update(model.s,model.a,model.r,model.s_prime,model.a_prime,model,game);
 
 	sa_num = game.available_sa(model.s,model.a);
@@ -119,7 +118,6 @@ function model = dyna_update(model,game,nsamples)
 		sa_num = u_sa(ind);
 
 		% choose a sample from the list for this sa
-		%pdf = exponential(model.sa(sa_num).dn-1:-1:1,5);
 		pdf = exponential(1:100, 1/5);
 		pdf = pdf/sum(pdf);
 		n = find(rand < cumsum(pdf),1);

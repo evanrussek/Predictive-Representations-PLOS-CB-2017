@@ -60,8 +60,7 @@ postr_Q(:,t) = model.Q;
 game_postr = game;
 %[r2.postr_hor(:,:,t) r2.postr_vert(:,:,t)] = makepolarrows(implied_policy,game);
 
-
-% run new training (nonrandom) % make sure these actually 
+% run new training (nonrandom)
 yx_to_state = reshape(1:100,10,10);
 maxstep = 500;
 % new reval
