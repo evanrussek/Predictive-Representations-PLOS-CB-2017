@@ -1,4 +1,4 @@
-function r2 = vsr2maze(nruns,param)
+function r2 = SRMBmaze(nruns,param)
 
 postr_hor = zeros(10,10,nruns); postr_vert = zeros(10,10,nruns);
 postr2_hor = zeros(10,10,nruns); postr2_vert= zeros(10,10,nruns);
@@ -14,7 +14,7 @@ t
 game = makegame2(locations,magnitude,wallloc);
 
 % make model
-model = model_Vsr2;
+model = model_SRMB;
 model = model.init(model,game,param);
 
 % explore phase
@@ -119,7 +119,7 @@ r2.postr_V = postr_V;
 r2.postr2_V = postr2_V;
 
 
-%figure(3)
-%postr_val = median(r2.postr_V,2);  displaypolicy(game_postr,postr_val);
-%figure(4)
-%postd_val = median(r2.postr2_V,2); displaypolicy(game_postr2,postd_val);
+figure(3)
+postr_val = median(r2.postr_V,2);  displaypolicy(game_postr,postr_val);
+figure(4)
+postd_val = median(r2.postr2_V,2); displaypolicy(game_postr2,postd_val);

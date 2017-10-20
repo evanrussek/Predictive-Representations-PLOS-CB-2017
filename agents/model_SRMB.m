@@ -1,4 +1,4 @@
-function model = model_QSR()
+function model = model_SRMB()
 
 model.init = @modelinit;
 model.update = @modelupdate;

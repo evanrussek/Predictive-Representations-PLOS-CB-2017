@@ -1,21 +1,20 @@
-READ ME - Please email Evan Russek, emr443@nyu.edu, any further questions.
+READ ME - Please email Evan Russek, emr443@nyu.edu, any questions.
 
 The main text contains 3 types of tasks (latent learning, detour task, and policy revaluation).
 
 Functions to simulate each model on each of these tasks is in the folder "simulation functions".  Functions containing the word "maze" simulate both the latent learning and policy revaluation task.  Functions ending in "detour" simulate the detour task.
 
-Each of these functions takes in a number of runs (how many times to run the simulation for) as well as a set of model parameters.
+Each of these functions takes in a number of runs (how many times to run the simulation) as well as a set of model parameters.
+These functions should produce plots for median value function and policy.
 
-The specific parameters differ for each model, but examples of how to set the parameters can be set are in the scripts in the folder "run simulations".
-
-Plots of the median value function and policy can be made by uncommenting the final lines of these functions (which contain calls to functions such as "display policy").  The lines which save the game structure must also be uncommented (these must be commented however for code to run in parallel).
+The specific parameters differ for each model, but examples of how to set the parameters can be set are in the scripts in the folder "run simulations".  These scripts were used to compare model parameters.
 
 The models in the code correspond to models in the paper as follows:
 
-vsrT = SR-TD
-vsr2 = SR-MB
+SRTD = SR-TD
+SRMB = SR-MB
 vpunc = one-step lookahead
-qsr = SR-Dyna
+SRDYNA = SR-Dyna
 dynaQ = Dyna-Q
 vsr_r = SR-TD with direct learning of the reward function for weights
 

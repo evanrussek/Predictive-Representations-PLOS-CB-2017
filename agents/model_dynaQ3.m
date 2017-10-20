@@ -105,9 +105,9 @@ function model = dyna_update(model,game,nsamples)
 		old401 = model.Q(401);
 		model.Q = q_update(s,a,r,s_prime,a_prime,model,game);
 		new401 = model.Q(401);
-		if new401 < old401
-			keyboard
-		end
+		%if new401 < old401
+		%	keyboard
+		%end
 	end
 
 function y = exponential(x,mu)

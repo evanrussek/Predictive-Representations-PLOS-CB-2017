@@ -1,6 +1,7 @@
-function test_params_qsr_high(num_in)
+function test_params_SRDYNA_high(num_in)
 
-con_input = num_in;
+%con_input = num_in;
+con_input = 1;
 
 eps_vec = [.1, .3, .5];
 sr_vec = [.1, .3, .5, .7, .9];
@@ -19,7 +20,7 @@ param.b_samples = 10;
 nruns = 1;
 
 % run latent learning nad policy revaluation
-r2 = qsrmaze(nruns, 10000, param);
+%r2 = SRDYNAmaze(nruns, 10000, param);
 
 %r2.param = param;
 
@@ -28,7 +29,7 @@ r2 = qsrmaze(nruns, 10000, param);
 %save(file_name, 'r2')
 
 % run detour task
-r3 = qsrdetour(nruns, 10000, param);
+r3 = SRDYNAdetour(nruns, 10000, param);
 
 %file_name = ['results/qsrd_high',num2str(con_input)];
 

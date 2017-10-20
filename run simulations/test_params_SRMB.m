@@ -1,7 +1,6 @@
-function test_params_vsr2(num_in)
+function test_params_SRMB(num_in)
 
 % just vsr2 maze - length of nums to go is 4
-
 
 
 
@@ -26,7 +25,7 @@ param.discount = 0.95;
 
 nruns = 1;
 
-%r2 = vsr2maze(nruns, param);
+r2 = SRMBmaze(nruns, param);
 
 %r2.param = param;
 
@@ -34,9 +33,9 @@ nruns = 1;
 
 %save(file_name, 'r2')
 
-r3 = vsr2detour(nruns,param);
+%r3 = SRMBdetour(nruns,param);
 
-r3.param = param;
+%r3.param = param;
 
 %file_name = ['vsr2_results/vsr2d',num2str(con_input)];
 

@@ -1,4 +1,4 @@
-function r2 = vsr2detour(nruns,param)
+function r2 = SRTDdetour(nruns,param)
 
 %vsr2
 
@@ -18,7 +18,7 @@ yx_to_state = reshape(1:100,10,10);
 game = makegame2(locations,magnitude,wallloc,start_pos);
 
 % make model
-model = model_Vsr2;
+model = model_SRTD;
 %param.epsilon = .1;
 %param.p_alpha = .3;
 %param.w_alpha = .3;

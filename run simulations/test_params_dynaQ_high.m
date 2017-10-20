@@ -1,5 +1,5 @@
 function test_params_dynaQ_high(con_input)
-
+con_input = 1;
 
 % 15 inputs
 eps_vec = [.1, .3, .5];
@@ -17,7 +17,7 @@ param.b_samples = 10;
 nruns = 1;
 nsamples = 10000;
 
-%r2 = dynaQmaze(nruns, nsamples, param);
+r2 = dynaQmaze(nruns, nsamples, param);
 
 %r2.param = param;
 
@@ -25,7 +25,7 @@ nsamples = 10000;
 
 %save(file_name, 'r2')
 
-r3 = dynaQdetour(nruns, nsamples, param);
+%r3 = dynaQdetour(nruns, nsamples, param);
 
 %file_name = ['dynahigh_results/dd',num2str(con_input)];
 

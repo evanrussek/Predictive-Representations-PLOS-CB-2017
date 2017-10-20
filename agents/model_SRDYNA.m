@@ -1,4 +1,4 @@
-function model = model_QSR2()
+function model = model_SRDYNA()
 
 	model.init = @modelinit;
 	model.update = @modelupdate;

@@ -1,4 +1,4 @@
-function r2 = vsrmaze(nruns, param)
+function r2 = SRTDmaze(nruns, param)
 
 postr_hor = zeros(10,10,nruns); postr_vert = zeros(10,10,nruns);
 postr2_hor = zeros(10,10,nruns); postr2_vert= zeros(10,10,nruns);
@@ -6,7 +6,7 @@ postr_V = zeros(100,nruns);  postr2_V = zeros(100,nruns);
 
 tic
 
-parfor t = 1:nruns
+for t = 1:nruns
 
 t
 
@@ -14,7 +14,7 @@ t
 game = makegame2(locations,magnitude,wallloc);
 
 % make model
-model = model_VsrT;
+model = model_SRTD;
 %param.epsilon = .1;
 %param.sr_alpha = .5;
 %param.w_alpha = .9;
@@ -56,7 +56,7 @@ model.V = model.M*model.w;
 %[implied_policy, state_val] =  get_pol_from_q(game,model);
 postr_V(:,t) = model.V(1:100);
 implied_policy = getpolicy(game,model.V);
-%game_postr = game;
+game_postr = game;
 [postr_hor(:,:,t) postr_vert(:,:,t)] = makepolarrows(implied_policy,game);
 
 
@@ -114,7 +114,7 @@ end
 model.V = model.M*model.w;
 [implied_policy] = getpolicy(game,model.V);
 postr2_V(:,t) = model.V(1:100);
-%game_postr2 = game;
+game_postr2 = game;
 [postr2_hor(:,:,t) postr2_vert(:,:,t)] = makepolarrows(implied_policy,game);
 
 
@@ -128,9 +128,9 @@ r2.postr2_V = postr2_V;
 %r2.game_postr2 = game_postr2;
 
 
-%figure(3)
-%postr_val = median(r2.postr_V,2);  %displaypolicy(game_postr,postr_val);
-%figure(4)
-%postd_val = median(r2.postr2_V,2); %displaypolicy(game_postr2,postd_val);
+figure(3)
+postr_val = median(r2.postr_V,2);  displaypolicy(game_postr,postr_val);
+figure(4)
+postd_val = median(r2.postr2_V,2); displaypolicy(game_postr2,postd_val);
 
 end

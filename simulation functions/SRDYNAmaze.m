@@ -1,4 +1,4 @@
-function r2 = qsrmaze(nruns, nsamples,param)
+function r2 = SRDYNAmaze(nruns, nsamples,param)
 
 
 %nruns = 1;
@@ -14,13 +14,13 @@ t
 game = makegame2(locations,magnitude,wallloc);
 
 % make model
-model = model_Qsr2;
+model = model_SRDYNA;
 
 model = model.init(model,game,param);
 
 
 % explore phase
-nexploresteps = 10000;
+nexploresteps = 50000;
 step = 0;
 
 while step < nexploresteps

@@ -1,4 +1,4 @@
-function test_params_qsr_low(con_input)
+function test_params_SRDYNA_low(con_input)
 
 eps_vec = [.1, .3, .5];
 sr_vec = [.1, .3, .5, .7, .9];
@@ -15,7 +15,7 @@ param.b_samples = 10;
 
 nruns = 1;
 
-r2 = qsrmaze(nruns, 10, param);
+r2 = SRDYNAmaze(nruns, 10, param);
 
 r2.param = param;
 
@@ -23,7 +23,7 @@ r2.param = param;
 
 %save(file_name, 'r2')
 
-r3 = qsrdetour(nruns, 10, param);
+%r3 = SRDYNAdetour(nruns, 10, param);
 
 %file_name = ['results/qsrd_low',num2str(con_input)];
 

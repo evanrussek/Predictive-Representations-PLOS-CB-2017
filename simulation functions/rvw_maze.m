@@ -14,7 +14,7 @@ for wl = 0:1
 
 	% make model
 	if wl == 1
-		model = model_VsrT;
+		model = model_SRTD;
 	else 
 		model = model_Vsr_r;
 	end

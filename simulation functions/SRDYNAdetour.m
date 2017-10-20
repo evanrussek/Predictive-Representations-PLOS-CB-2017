@@ -1,4 +1,4 @@
-function r2 = qsrdetour(nruns,nsamples,params_in)
+function r2 = SRDYNAdetour(nruns,nsamples,params_in)
 
 r2.postr_hor = zeros(10,10,nruns); r2.postr_vert = zeros(10,10,nruns);
 r2.postd_hor = zeros(10,10,nruns); r2.postd_vert= zeros(10,10,nruns);
@@ -13,7 +13,7 @@ global yx_to_state;
 game = makegame2(locations,magnitude,wallloc,start_pos);
 
 % make model
-model = model_Qsr2;
+model = model_SRDYNA;
 model = model.init(model,game,params_in);
 
 nexploresteps = 5000;
