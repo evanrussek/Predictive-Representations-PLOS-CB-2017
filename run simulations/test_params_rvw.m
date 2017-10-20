@@ -13,12 +13,12 @@ param.sr_alpha = sr_vec(sr_ind);
 param.w_alpha = w_vec(w_ind);
 param.discount = 0.9;
 
-nruns = 500;
+nruns = 1;
 
 r2 = rvw_maze(nruns,param);
 
-file_name = ['rvw_results/rw',num2str(con_input)];
+%file_name = ['rvw_results/rw',num2str(con_input)];
 
-save(file_name, 'r2')
+%save(file_name, 'r2')
 
 

@@ -135,7 +135,6 @@ function model = dyna_update(model,game,nsamples)
 		model.Q = model.H*model.w;
 	end
 
-		%	sample = model.sa(sa_num).samples(model.sa(sa_num).dn-1,:);
 
 
 function w = w_update(s,a,r,s_prime,a_prime,model,game)

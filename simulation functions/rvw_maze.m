@@ -66,8 +66,8 @@ end
 
 r2.nstepbytrial = nstepbytrial;
 
-%figure(1)
-%hold on
-%plot(median(nstepbytrial(:,:,1),1))
-%plot(median(nstepbytrial(:,:,2),1))
-%legend('reward','weights')
+figure(1)
+hold on
+plot(median(nstepbytrial(:,:,1),1))
+plot(median(nstepbytrial(:,:,2),1))
+legend('reward','weights')
