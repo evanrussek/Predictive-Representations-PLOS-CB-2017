@@ -18,6 +18,3 @@ SRDYNA = SR-Dyna
 dynaQ = Dyna-Q
 vsr_r = SR-TD with direct learning of the reward function for weights
 
-Additionally, "qr_maze.m" contains code for the simulation in supplementary figure 1 and "rvw_maze.m" is simulation for supplementary figure 2.
-
-
