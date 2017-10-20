@@ -15,15 +15,15 @@ nruns = 500;
 
 r2 = vpuncmaze(nruns,param);
 
-file_name = ['vpunc_results/m',num2str(con_input)];
+%file_name = ['vpunc_results/m',num2str(con_input)];
 
-save(file_name, 'r2')
+%save(file_name, 'r2')
 
 r3 = vpuncdetour(nruns, param);
 
-file_name = ['vpunc_results/d',num2str(con_input)];
+%file_name = ['vpunc_results/d',num2str(con_input)];
 
-save(file_name, 'r3')
+%save(file_name, 'r3')
 
 
 
