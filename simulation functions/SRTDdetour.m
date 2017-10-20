@@ -45,14 +45,6 @@ maxstep = 500;
 game.Rsa(401) = 10;
 % drop  in reward state, show new reward % verify that this changes w
 nrevaltrials = 1;
-%for i = 1:nrevaltrials
-%	game.current_state = game.reward_states(1);
-%	model.s = game.reward_states(1);
-%	model.a = 0;
-%	model.s_prime= 0; 
-%	model.a_prime = 0;
-%	[game, model] = gamestep2(game,model,0);
-%end
 
 model.param.build = 1;
 
