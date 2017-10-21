@@ -11,13 +11,13 @@ alpha_vec = [.1, .3, .5, .7, .9];
 
 param.epsilon = .1; %eps_vec(eps_ind);
 param.alpha = .3; % alpha_vec(w_ind);
-param.discount = 0.95;
+param.discount = 0.9;
 param.b_samples = 10;
 
 nruns = 1;
 nsamples = 10000;
 
-r2 = dynaQmaze(nruns, nsamples, param);
+%r2 = dynaQmaze(nruns, nsamples, param);
 
 %r2.param = param;
 
@@ -25,7 +25,7 @@ r2 = dynaQmaze(nruns, nsamples, param);
 
 %save(file_name, 'r2')
 
-%r3 = dynaQdetour(nruns, nsamples, param);
+r3 = dynaQdetour(nruns, nsamples, param);
 
 %file_name = ['dynahigh_results/dd',num2str(con_input)];
 

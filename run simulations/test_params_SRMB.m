@@ -18,14 +18,14 @@ p_vec = [.1, .3, .5, .7, .9];
 w_vec = [.1, .3, .5, .7, .9];
 
 
-param.epsilon = eps_vec(eps_ind);
-param.p_alpha = p_vec(p_ind);
-param.w_alpha = w_vec(w_ind);
-param.discount = 0.95;
+param.epsilon = .1; %eps_vec(eps_ind);
+param.p_alpha = .1;%p_vec(p_ind);
+param.w_alpha = .2; %w_vec(w_ind);
+param.discount = 0.9;
 
 nruns = 1;
 
-r2 = SRMBmaze(nruns, param);
+%r2 = SRMBmaze(nruns, param);
 
 %r2.param = param;
 
@@ -33,7 +33,7 @@ r2 = SRMBmaze(nruns, param);
 
 %save(file_name, 'r2')
 
-%r3 = SRMBdetour(nruns,param);
+r3 = SRMBdetour(nruns,param);
 
 %r3.param = param;
 

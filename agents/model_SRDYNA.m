@@ -134,7 +134,6 @@ function model = dyna_update(model,game,nsamples)
 	end
 
 
-
 function w = w_update(s,a,r,s_prime,a_prime,model,game)
 
 	w = model.w;

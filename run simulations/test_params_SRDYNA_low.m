@@ -10,7 +10,7 @@ w_vec = [.1, .3, .5, .7, .9];
 param.epsilon = eps_vec(eps_ind);
 param.sr_alpha = sr_vec(sr_ind);
 param.w_alpha = w_vec(w_ind);
-param.discount = 0.95;
+param.discount = 0.9;
 param.b_samples = 10;
 
 nruns = 1;

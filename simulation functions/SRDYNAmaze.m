@@ -20,7 +20,7 @@ model = model.init(model,game,param);
 
 
 % explore phase
-nexploresteps = 50000;
+nexploresteps = 100000;
 step = 0;
 
 while step < nexploresteps
